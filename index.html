@@ -1,1965 +1,1731 @@
 ```html
 <!DOCTYPE html>
-<html lang="es" data-lang="es">
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
 
-<title>Psicosfera–Tecnósfera · Interdisciplinary Research & Territorial Intelligence</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;600&display=swap">
+  <meta
+    name="description"
+    content="Psicosfera–Tecnósfera · Investigación interdisciplinaria, sistemas sociales computacionales e inteligencia territorial.">
 
-<style>
-:root{
-  --bg:#f6f5f1;
-  --ink:#1c2321;
-  --mute:#5d6663;
-  --line:#d8d6cd;
-  --psi:#b4533c;
-  --tec:#1f6f78;
-  --mix:#e9e6dc;
-}
+  <meta
+    name="author"
+    content="Gustavo Modesto Godoy Uribe">
 
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#141a19;
-    --ink:#e8e8e2;
-    --mute:#9aa5a2;
-    --line:#2c3634;
-    --psi:#e0836b;
-    --tec:#5cb5bf;
-    --mix:#1d2625;
-  }
-}
+  <title>
+    Psicosfera–Tecnósfera · Interdisciplinary Research & Territorial Intelligence
+  </title>
 
-*{
-  box-sizing:border-box;
-}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-html[data-lang="es"] [lang="en"],
-html[data-lang="en"] [lang="es"]{
-  display:none!important;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font:19px/1.65 Newsreader,Georgia,serif;
-}
+  <style>
 
-main{
-  max-width:46rem;
-  margin:0 auto;
-  padding:2rem 1.25rem 4rem;
-}
+    :root {
+      --bg: #ffffff;
+      --text: #1d2329;
+      --muted: #68717a;
+      --line: #dfe3e6;
+      --soft: #f5f6f7;
 
-h1,h2,h3,.sans,button{
-  font-family:"Public Sans",system-ui,sans-serif;
-}
+      --psi: #6b5ca5;
+      --tec: #287c8e;
 
-.bar{
-  display:flex;
-  justify-content:flex-end;
-  gap:.4rem;
-  margin-bottom:1.5rem;
-}
+      --max: 1080px;
+    }
 
-.bar button{
-  font-size:.85rem;
-  font-weight:600;
-  padding:.3rem .8rem;
-  border:1px solid var(--line);
-  background:transparent;
-  color:var(--ink);
-  border-radius:999px;
-  cursor:pointer;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-html[data-lang="es"] #b-es,
-html[data-lang="en"] #b-en{
-  background:var(--ink);
-  color:var(--bg);
-  border-color:var(--ink);
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-h1{
-  font-size:clamp(2.4rem,7vw,3.6rem);
-  line-height:1.05;
-  margin:0 0 .6rem;
-  letter-spacing:-.02em;
-}
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Public Sans", sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+    }
 
-h1 .p{
-  color:var(--psi);
-}
+    a {
+      color: inherit;
+    }
 
-h1 .t{
-  color:var(--tec);
-}
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-.sub{
-  font:600 1rem "Public Sans",sans-serif;
-  color:var(--mute);
-  margin:0 0 2rem;
-}
+    /* --------------------------------------------------
+       LAYOUT
+    -------------------------------------------------- */
 
-h2{
-  font-size:1.35rem;
-  margin:3.2rem 0 .8rem;
-  padding-top:1.2rem;
-  border-top:1px solid var(--line);
-}
+    main {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
 
-h3{
-  font-size:1.02rem;
-  margin:1.6rem 0 .3rem;
-}
+    section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line);
+    }
 
-p{
-  margin:.8rem 0;
-}
+    .section-label {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-.q{
-  font-size:1.5rem;
-  line-height:1.35;
-  font-style:italic;
-  border-left:3px solid var(--tec);
-  padding:.2rem 0 .2rem 1.1rem;
-  margin:1.5rem 0;
-}
+    /* --------------------------------------------------
+       HEADER
+    -------------------------------------------------- */
 
-.note{
-  background:var(--mix);
-  padding:1rem 1.15rem;
-  border-radius:6px;
-  font-size:.95rem;
-  margin:1.5rem 0;
-}
+    header {
+      padding: 110px 0 90px;
+      border-bottom: 1px solid var(--line);
+    }
 
-.scroll{
-  overflow-x:auto;
-  max-width:100%;
-}
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-figure{
-  margin:1.8rem 0;
-}
+    h1,
+    h2,
+    h3 {
+      font-family: "Newsreader", serif;
+      font-weight: 500;
+      line-height: 1.15;
+    }
 
-figcaption{
-  font:.85rem "Public Sans",sans-serif;
-  color:var(--mute);
-  margin-top:.5rem;
-}
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      letter-spacing: -0.035em;
+    }
 
-svg{
-  width:100%;
-  height:auto;
-  display:block;
-}
+    .subtitle {
+      max-width: 760px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
 
-pre{
-  background:var(--mix);
-  padding:1rem 1.2rem;
-  border-radius:6px;
-  font:.85rem/1.5 ui-monospace,Menlo,monospace;
-  overflow-x:auto;
-  margin:1.2rem 0;
-}
+    .central-question {
+      max-width: 900px;
+      margin-top: 60px;
+      padding: 30px 0 0 28px;
+      border-left: 3px solid var(--psi);
+      font-family: "Newsreader", serif;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      line-height: 1.3;
+    }
 
-table{
-  border-collapse:collapse;
-  width:100%;
-  font:.92rem "Public Sans",sans-serif;
-  min-width:26rem;
-}
+    /* --------------------------------------------------
+       TYPOGRAPHY
+    -------------------------------------------------- */
 
-th{
-  text-align:left;
-  padding:.5rem .7rem;
-  border-bottom:2px solid var(--ink);
-}
+    h2 {
+      margin: 0 0 28px;
+      font-size: clamp(2.1rem, 4vw, 3.5rem);
+      letter-spacing: -0.025em;
+    }
 
-th:first-child{
-  color:var(--psi);
-}
+    h3 {
+      margin-top: 42px;
+      margin-bottom: 14px;
+      font-size: 1.6rem;
+    }
 
-th:last-child{
-  color:var(--tec);
-}
+    p {
+      max-width: 820px;
+    }
 
-td{
-  padding:.45rem .7rem;
-  border-bottom:1px solid var(--line);
-}
+    ul,
+    ol {
+      max-width: 820px;
+    }
 
-ul{
-  padding-left:1.2rem;
-}
+    li {
+      margin-bottom: 8px;
+    }
 
-li{
-  margin:.3rem 0;
-}
+    .lead {
+      font-size: 1.15rem;
+    }
 
-figure.img img{
-  width:100%;
-  height:auto;
-  max-height:80vh;
-  object-fit:contain;
-  background:#fff;
-  border-radius:6px;
-  border:1px solid var(--line);
-}
+    .muted {
+      color: var(--muted);
+    }
 
-figure.img{
-  margin:1.8rem 0;
-}
+    .small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
 
-a{
-  color:var(--tec);
-}
+    /* --------------------------------------------------
+       POSITIONING
+    -------------------------------------------------- */
 
-#comments .setup{
-  font:.9rem "Public Sans",sans-serif;
-  color:var(--mute);
-  border:1px dashed var(--line);
-  padding:1rem;
-  border-radius:6px;
-}
+    .positioning {
+      margin-top: 34px;
+      padding: 24px 26px;
+      background: var(--soft);
+      border-left: 3px solid var(--tec);
+    }
 
-footer{
-  margin-top:4rem;
-  padding-top:1.2rem;
-  border-top:1px solid var(--line);
-  font:.85rem "Public Sans",sans-serif;
-  color:var(--mute);
-}
+    .positioning p {
+      margin: 0;
+    }
 
-:focus-visible{
-  outline:2px solid var(--tec);
-  outline-offset:2px;
-}
-</style>
+    /* --------------------------------------------------
+       PSYCHOSPHERE / TECHNOSPHERE
+    -------------------------------------------------- */
+
+    .sphere-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin: 50px 0;
+    }
+
+    .sphere {
+      min-height: 240px;
+      padding: 35px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .sphere.psi {
+      border-top: 4px solid var(--psi);
+    }
+
+    .sphere.tec {
+      border-top: 4px solid var(--tec);
+    }
+
+    .sphere h3 {
+      margin-top: 0;
+    }
+
+    /* --------------------------------------------------
+       QUESTIONS
+    -------------------------------------------------- */
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .question {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .question-number {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+
+    .question h3 {
+      margin: 0 0 12px;
+    }
+
+    /* --------------------------------------------------
+       MODEL
+    -------------------------------------------------- */
+
+    .model {
+      margin: 45px 0;
+      padding: 35px;
+      background: var(--soft);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .model-line {
+      min-width: 760px;
+      text-align: center;
+      font-family: "Newsreader", serif;
+      font-size: 1.25rem;
+    }
+
+    /* --------------------------------------------------
+       NETWORK / COMPUTATIONAL ARCHITECTURE
+    -------------------------------------------------- */
+
+    .architecture {
+      margin-top: 45px;
+      padding: 35px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .architecture-flow {
+      min-width: 900px;
+      font-family: "Public Sans", sans-serif;
+      font-size: 0.92rem;
+      line-height: 2;
+      text-align: center;
+    }
+
+    .node {
+      display: inline-block;
+      margin: 5px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .arrow {
+      color: var(--muted);
+      padding: 0 3px;
+    }
+
+    .validation-note {
+      margin-top: 30px;
+      padding: 22px 25px;
+      border-left: 3px solid var(--tec);
+      background: var(--soft);
+    }
+
+    /* --------------------------------------------------
+       FIGURES
+    -------------------------------------------------- */
+
+    figure.img {
+      margin: 45px 0;
+    }
+
+    figure.img img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+    }
+
+    figcaption {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* --------------------------------------------------
+       PILOT CASE
+    -------------------------------------------------- */
+
+    .case-box {
+      margin-top: 40px;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .case-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* --------------------------------------------------
+       RESULTS
+    -------------------------------------------------- */
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .result-card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .result-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-family: "Newsreader", serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+
+    /* --------------------------------------------------
+       CITATION
+    -------------------------------------------------- */
+
+    .citation-box {
+      margin: 1.5rem 0;
+      padding: 1.2rem 1.4rem;
+      border-left: 3px solid var(--psi);
+      background: var(--soft);
+      border-radius: 4px;
+    }
+
+    .citation-box p {
+      margin: 0 0 1rem 0;
+      line-height: 1.7;
+    }
+
+    .citation-box a {
+      word-break: break-word;
+    }
+
+    .copy-citation-button {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.65rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #ffffff;
+      color: inherit;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition:
+        opacity 0.2s ease,
+        transform 0.1s ease;
+    }
+
+    .copy-citation-button:hover {
+      opacity: 0.8;
+    }
+
+    .copy-citation-button:active {
+      transform: translateY(1px);
+    }
+
+    .copy-status {
+      display: inline-block;
+      margin-left: 0.7rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .citation-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    /* --------------------------------------------------
+       COLLABORATION
+    -------------------------------------------------- */
+
+    .discipline-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 35px;
+      margin-top: 30px;
+      max-width: 850px;
+    }
+
+    .discipline {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* --------------------------------------------------
+       GISCUS
+    -------------------------------------------------- */
+
+    #comments {
+      min-height: 250px;
+    }
+
+    /* --------------------------------------------------
+       FOOTER
+    -------------------------------------------------- */
+
+    footer {
+      padding: 50px 0 70px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* --------------------------------------------------
+       RESPONSIVE
+    -------------------------------------------------- */
+
+    @media (max-width: 800px) {
+
+      main {
+        width: min(100% - 28px, var(--max));
+      }
+
+      header {
+        padding: 75px 0 65px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .sphere-container,
+      .question-grid,
+      .discipline-list {
+        grid-template-columns: 1fr;
+      }
+
+      .result-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .central-question {
+        margin-top: 40px;
+      }
+
+    }
+
+    @media (max-width: 520px) {
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .copy-status {
+        display: block;
+        margin: 10px 0 0;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-<main>
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
 
-<!-- =========================================================
-     LANGUAGE SWITCH
-========================================================= -->
+  <header>
+    <main>
+
+      <div class="eyebrow">
+        Interdisciplinary Research · Computational Social Systems · Territorial Intelligence
+      </div>
+
+      <h1>
+        Psicosfera–Tecnósfera
+      </h1>
 
-<div class="bar" role="group" aria-label="Language / Idioma">
-  <button id="b-es" onclick="setLang('es')">Español</button>
-  <button id="b-en" onclick="setLang('en')">English</button>
-</div>
+      <p class="subtitle">
+        An interdisciplinary research line focused on the interaction
+        between human processes, social relations, institutions,
+        technologies and territorial systems.
+      </p>
 
+      <div class="central-question">
+        ¿Cómo interactúan los procesos humanos, las relaciones sociales,
+        las instituciones y las tecnologías en la evolución de sistemas
+        territoriales complejos?
+      </div>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+    </main>
+  </header>
 
-<h1>
-  <span class="p">Psicosfera</span>–<span class="t">Tecnósfera</span>
-</h1>
 
-<p class="sub">
-  Interdisciplinary Research · Computational Social Systems · Territorial Intelligence
-</p>
+  <main>
 
+    <!-- ==================================================
+         POSITIONING
+    ================================================== -->
 
-<!-- =========================================================
-     CENTRAL QUESTION
-========================================================= -->
+    <section id="positioning" lang="es">
 
-<p class="q" lang="es">
-  ¿Cómo interactúan los procesos humanos, las relaciones sociales,
-  las instituciones y las tecnologías en la evolución de sistemas
-  territoriales complejos?
-</p>
-
-<p class="q" lang="en">
-  How do human processes, social relations, institutions and technologies
-  interact in the evolution of complex territorial systems?
-</p>
+      <div class="section-label">
+        POSICIONAMIENTO DISCIPLINARIO
+      </div>
 
+      <h2>
+        Una interfaz interdisciplinaria
+      </h2>
 
-<!-- =========================================================
-     DISCIPLINARY POSITIONING
-========================================================= -->
+      <p class="lead">
+        Esta línea de investigación surge desde los estudios territoriales,
+        la sostenibilidad y la ciencia de sistemas.
+      </p>
 
-<div class="note" lang="es">
+      <div class="positioning">
 
-  <strong>Posicionamiento disciplinario.</strong>
+        <p>
+          La <strong>Psicosfera</strong> se utiliza aquí como una dimensión
+          analítica para estudiar procesos humanos y sociales; no pretende
+          sustituir a la Psicología ni constituir una teoría psicológica
+          independiente.
+        </p>
 
-  Esta línea de investigación surge desde los estudios territoriales,
-  la sostenibilidad y la ciencia de sistemas.
+        <p style="margin-top: 18px;">
+          El propósito es generar una interfaz interdisciplinaria que permita
+          relacionar fenómenos humanos, sociales, institucionales, tecnológicos
+          y territoriales, facilitando la formulación de preguntas que puedan
+          posteriormente ser examinadas mediante disciplinas y métodos
+          especializados.
+        </p>
 
-  La <strong>Psicosfera</strong> se utiliza aquí como una dimensión
-  analítica para estudiar procesos humanos y sociales; no pretende
-  sustituir a la Psicología ni constituir una teoría psicológica
-  independiente.
+      </div>
 
-  El propósito es generar una interfaz interdisciplinaria que permita
-  integrar aportes de Psicología, Ciencias Sociales, Ciencia de Redes,
-  Inteligencia Artificial, estudios territoriales y otras disciplinas
-  interesadas en comprender sistemas humanos complejos.
+    </section>
 
-</div>
 
-<div class="note" lang="en">
+    <!-- ==================================================
+         PROBLEM
+    ================================================== -->
 
-  <strong>Disciplinary positioning.</strong>
+    <section id="problem" lang="es">
 
-  This research line emerges from territorial studies, sustainability
-  and systems science.
+      <div class="section-label">
+        PROBLEMA
+      </div>
 
-  The <strong>Psychosphere</strong> is used here as an analytical dimension
-  for studying human and social processes; it does not seek to replace
-  Psychology or constitute an independent psychological theory.
+      <h2>
+        El problema de la fragmentación
+      </h2>
 
-  The purpose is to provide an interdisciplinary interface through which
-  contributions from Psychology, Social Sciences, Network Science,
-  Artificial Intelligence, territorial studies and related fields can
-  be integrated.
+      <p class="lead">
+        Los sistemas territoriales no evolucionan exclusivamente a partir
+        de variables materiales o tecnológicas.
+      </p>
 
-</div>
+      <p>
+        Las transformaciones territoriales emergen de configuraciones donde
+        interactúan personas, relaciones sociales, organizaciones,
+        instituciones, tecnologías, infraestructuras, conocimiento,
+        historia y condiciones materiales.
+      </p>
 
+      <p>
+        Sin embargo, estos componentes suelen estudiarse de manera separada.
+        Esta fragmentación dificulta comprender cómo determinadas
+        configuraciones generan estabilidad, vulnerabilidad, adaptación,
+        transformación o bloqueo.
+      </p>
 
-<!-- =========================================================
-     CONCEPTUAL DIAGRAM
-========================================================= -->
+      <p>
+        La investigación Psicosfera–Tecnósfera explora esta interfaz sin
+        asumir que una sola disciplina pueda explicar el sistema completo.
+      </p>
 
-<figure>
+    </section>
 
-<svg
-  viewBox="0 0 640 280"
-  role="img"
-  aria-label="Psicosfera y Tecnósfera">
 
-  <circle
-    cx="245"
-    cy="140"
-    r="115"
-    fill="var(--psi)"
-    fill-opacity=".22"
-    stroke="var(--psi)"
-    stroke-width="2"/>
+    <!-- ==================================================
+         PSYCHOSPHERE / TECHNOSPHERE
+    ================================================== -->
 
-  <circle
-    cx="395"
-    cy="140"
-    r="115"
-    fill="var(--tec)"
-    fill-opacity=".22"
-    stroke="var(--tec)"
-    stroke-width="2"/>
+    <section id="spheres" lang="es">
 
-  <g
-    font-family="Public Sans,sans-serif"
-    font-size="14"
-    fill="currentColor"
-    text-anchor="middle">
+      <div class="section-label">
+        MARCO ANALÍTICO
+      </div>
 
-    <text
-      x="185"
-      y="62"
-      font-weight="600"
-      font-size="17"
-      fill="var(--psi)">
-      Psicosfera
-    </text>
-
-    <text
-      x="455"
-      y="62"
-      font-weight="600"
-      font-size="17"
-      fill="var(--tec)">
-      Tecnósfera
-    </text>
+      <h2>
+        Psicosfera y Tecnósfera
+      </h2>
 
+      <div class="sphere-container">
 
-    <!-- ESPAÑOL -->
+        <div class="sphere psi">
 
-    <g lang="es">
+          <h3>
+            Psicosfera
+          </h3>
 
-      <text x="185" y="120">percepción</text>
-      <text x="185" y="142">conocimiento</text>
-      <text x="185" y="164">valores y normas</text>
-      <text x="185" y="186">confianza · agencia</text>
-
-      <text x="455" y="120">tecnología</text>
-      <text x="455" y="142">instituciones</text>
-      <text x="455" y="164">infraestructura</text>
-      <text x="455" y="186">recursos · sistemas</text>
-
-      <text x="320" y="128" font-weight="600">relaciones</text>
-      <text x="320" y="150">acción</text>
-      <text x="320" y="172">aprendizaje</text>
-
-    </g>
-
-
-    <!-- ENGLISH -->
-
-    <g lang="en">
-
-      <text x="185" y="120">perception</text>
-      <text x="185" y="142">knowledge</text>
-      <text x="185" y="164">values and norms</text>
-      <text x="185" y="186">trust · agency</text>
+          <p>
+            Dimensión analítica asociada a procesos humanos y sociales:
+            percepción, experiencia, aprendizaje, confianza, memoria,
+            relaciones, participación, agencia, interpretación y acción
+            individual y colectiva.
+          </p>
 
-      <text x="455" y="120">technology</text>
-      <text x="455" y="142">institutions</text>
-      <text x="455" y="164">infrastructure</text>
-      <text x="455" y="186">resources · systems</text>
+        </div>
 
-      <text x="320" y="128" font-weight="600">relations</text>
-      <text x="320" y="150">action</text>
-      <text x="320" y="172">learning</text>
+        <div class="sphere tec">
 
-    </g>
-
-  </g>
-</svg>
+          <h3>
+            Tecnósfera
+          </h3>
 
-<figcaption lang="es">
-  El interés analítico se encuentra en la zona de interacción entre ambas dimensiones.
-</figcaption>
+          <p>
+            Dimensión asociada a artefactos, infraestructuras, tecnologías,
+            información, redes técnicas, sistemas de decisión y capacidades
+            materiales que median las relaciones entre sociedad y territorio.
+          </p>
 
-<figcaption lang="en">
-  The analytical interest lies in the interaction zone between both dimensions.
-</figcaption>
+        </div>
 
-</figure>
+      </div>
 
+      <p>
+        La interacción entre ambas dimensiones se estudia en relación con
+        instituciones, organizaciones, territorio e historia.
+      </p>
 
-<!-- =========================================================
-     SPANISH
-========================================================= -->
+    </section>
 
-<section lang="es">
 
-<h2>Una línea de investigación interdisciplinaria</h2>
+    <!-- ==================================================
+         RESEARCH QUESTIONS
+    ================================================== -->
 
-<p>
-Esta línea estudia la interacción entre dos dimensiones analíticas
-de los sistemas territoriales.
-</p>
+    <section id="research-questions" lang="es">
 
-<p>
-La <strong>Psicosfera</strong> comprende procesos humanos, cognitivos,
-relacionales y sociales que intervienen en la percepción,
-interpretación y acción.
-</p>
+      <div class="section-label">
+        RESEARCH QUESTIONS
+      </div>
 
-<p>
-La <strong>Tecnósfera</strong> comprende estructuras materiales,
-tecnológicas, organizacionales e institucionales que pueden
-posibilitar, condicionar o restringir determinadas formas de acción.
-</p>
+      <h2>
+        Preguntas de investigación
+      </h2>
 
-<p>
-El interés no está en estudiar estas dimensiones de manera aislada,
-sino en comprender las configuraciones que emergen de su interacción.
-</p>
+      <div class="question-grid">
 
-<p class="q">
-El propósito no es explicar lo humano únicamente desde la tecnología,
-ni explicar los territorios únicamente desde el comportamiento.
-Es estudiar las relaciones entre ambos dominios.
-</p>
+        <div class="question">
 
+          <div class="question-number">
+            RQ1 · REPRESENTATION
+          </div>
 
-<h2>Problema de investigación</h2>
+          <h3>
+            Representación
+          </h3>
 
-<p>
-Los sistemas sociales territoriales difícilmente pueden comprenderse
-mediante una sola dimensión de análisis.
-</p>
+          <p>
+            ¿Cómo representar estructuralmente los componentes humanos,
+            sociales, institucionales, tecnológicos y territoriales de
+            sistemas complejos?
+          </p>
 
-<p>
-Infraestructura, tecnología, instituciones, recursos, conocimiento,
-relaciones sociales, percepciones y capacidades humanas interactúan
-de manera situada y pueden producir resultados diferentes incluso
-frente a condiciones aparentemente similares.
-</p>
+        </div>
 
-<p>
-Por ello, la pregunta central es:
-</p>
 
-<p class="q">
-¿Cómo se configuran y transforman las relaciones entre procesos
-humanos, estructuras tecnológicas e instituciones en sistemas
-territoriales complejos?
-</p>
+        <div class="question">
 
-<p>
-Esta perspectiva permite conectar sostenibilidad, estudios territoriales,
-ciencias sociales, Psicología, ciencia de redes y herramientas
-computacionales sin reducir una disciplina a otra.
-</p>
+          <div class="question-number">
+            RQ2 · EXPLORATION
+          </div>
 
+          <h3>
+            Exploración
+          </h3>
 
-<h2>Preguntas de investigación</h2>
-
-<h3>RQ1 · Representación</h3>
+          <p>
+            ¿Cómo pueden herramientas computacionales, inteligencia
+            artificial, análisis semántico y redes ayudar a identificar
+            relaciones o patrones potenciales que posteriormente puedan
+            ser examinados empíricamente?
+          </p>
 
-<p>
-¿Cómo pueden representarse computacionalmente actores, capacidades,
-relaciones, proyectos y condiciones tecnosféricas que participan
-en sistemas sociales territoriales?
-</p>
-
-<h3>RQ2 · Exploración</h3>
+        </div>
 
-<p>
-¿Pueden las herramientas de análisis de redes, procesamiento semántico
-e inteligencia artificial ayudar a identificar relaciones potenciales
-o patrones que posteriormente puedan ser examinados mediante
-investigación empírica?
-</p>
 
-<h3>RQ3 · Cambio</h3>
+        <div class="question">
 
-<p>
-¿Cómo se modifican las configuraciones relacionales y determinadas
-dimensiones del comportamiento o la acción colectiva después de
-intervenciones específicas?
-</p>
+          <div class="question-number">
+            RQ3 · CHANGE
+          </div>
 
-<h3>RQ4 · Validación</h3>
+          <h3>
+            Cambio
+          </h3>
 
-<p>
-¿Qué tipo de evidencia permite distinguir una asociación, una relación
-funcional o una correlación de un mecanismo causal propiamente tal?
-</p>
+          <p>
+            ¿Cómo evolucionan las configuraciones territoriales cuando
+            cambian las relaciones entre actores, instituciones,
+            tecnologías y condiciones materiales?
+          </p>
 
+        </div>
 
-<h2>Marco analítico interdisciplinario</h2>
 
-<p>
-La Psicosfera se utiliza como una dimensión analítica para representar
-procesos humanos y sociales relevantes para la acción.
-</p>
+        <div class="question">
 
-<p>
-No constituye una teoría psicológica independiente ni pretende
-sustituir los conceptos desarrollados por las distintas disciplinas
-de las ciencias humanas.
-</p>
+          <div class="question-number">
+            RQ4 · VALIDATION
+          </div>
 
-<p>
-La Tecnósfera representa estructuras materiales, técnicas,
-organizacionales e institucionales que posibilitan, condicionan
-o restringen determinadas formas de acción.
-</p>
+          <h3>
+            Validación
+          </h3>
 
+          <p>
+            ¿Cómo distinguir entre asociación, relación funcional,
+            correlación y mecanismos causales generativos?
+          </p>
 
-<div class="scroll">
+        </div>
 
-<table>
+      </div>
 
-<thead>
-<tr>
-<th>Psicosfera</th>
-<th>Tecnósfera</th>
-</tr>
-</thead>
+    </section>
 
-<tbody>
 
-<tr>
-<td>percepción</td>
-<td>infraestructura</td>
-</tr>
+    <!-- ==================================================
+         CONCEPTUAL FRAMEWORK
+    ================================================== -->
 
-<tr>
-<td>conocimiento</td>
-<td>tecnología</td>
-</tr>
-
-<tr>
-<td>confianza</td>
-<td>instituciones</td>
-</tr>
+    <section id="framework" lang="es">
 
-<tr>
-<td>normas</td>
-<td>organizaciones</td>
-</tr>
+      <div class="section-label">
+        MARCO ANALÍTICO INTERDISCIPLINARIO
+      </div>
 
-<tr>
-<td>aprendizaje</td>
-<td>información</td>
-</tr>
-
-<tr>
-<td>motivación</td>
-<td>recursos</td>
-</tr>
-
-<tr>
-<td>agencia</td>
-<td>sistemas</td>
-</tr>
-
-<tr>
-<td>comportamiento</td>
-<td>dispositivos</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-
-<p>
-Estas categorías son analíticas y abiertas.
-Su significado específico depende del problema de investigación
-y de la disciplina utilizada para estudiarlo.
-</p>
-
-<p>
-El objeto de interés se encuentra en las relaciones entre dimensiones,
-no en asumir que una de ellas pueda explicar por sí sola el
-funcionamiento del sistema.
-</p>
-
-
-<h2>Relación entre disciplinas</h2>
-
-<p>
-El marco busca funcionar como una <strong>interfaz interdisciplinaria</strong>.
-</p>
-
-<ul>
-
-<li>
-<strong>Psicología:</strong>
-conceptos y métodos para estudiar procesos individuales,
-interpersonales, sociales y comunitarios.
-</li>
-
-<li>
-<strong>Sociología:</strong>
-estructuras, relaciones y procesos colectivos.
-</li>
-
-<li>
-<strong>Ciencia de Redes:</strong>
-representación y análisis de configuraciones relacionales.
-</li>
-
-<li>
-<strong>Ciencia Computacional:</strong>
-estructuración, procesamiento y exploración de información.
-</li>
-
-<li>
-<strong>Estudios Territoriales:</strong>
-contextualización espacial, institucional e histórica.
-</li>
-
-<li>
-<strong>Sostenibilidad:</strong>
-campo de problemas donde estas dimensiones pueden observarse
-conjuntamente.
-</li>
-
-</ul>
-
-<p class="note">
-<strong>
-El marco no pretende reemplazar las disciplinas especializadas;
-busca crear condiciones para que puedan dialogar dentro de una
-representación común del sistema.
-</strong>
-</p>
-
-
-<h2>Modelo analítico</h2>
-
-<pre>
-                         TERRITORIO
-                              │
-              ┌───────────────┴───────────────┐
-              │                               │
-        PSICOSFERA                       TECNÓSFERA
-              │                               │
-              └───────────────┬───────────────┘
-                              │
-                         RELACIONES
-                              │
-                    percepción / acción
-                              │
-                        interacción
-                              │
-                         resultados
-                              │
-                         aprendizaje
-                              │
-                       transformación
-</pre>
-
-<p>
-La secuencia no representa una cadena causal universal.
-Es una estructura analítica para formular y contrastar hipótesis.
-</p>
-
-
-<h2>Representación como red</h2>
-
-<p>
-El sistema puede representarse como una red heterogénea compuesta
-por distintos tipos de entidades:
-</p>
-
-<pre>
-PERSONAS
-   │
-   ├── capacidades
-   ├── conocimientos
-   ├── relaciones
-   └── proyectos
-          │
-          ├── organizaciones
-          ├── instituciones
-          ├── recursos
-          └── tecnologías
-</pre>
-
-<p>
-La representación permite estudiar no solamente las entidades,
-sino también las relaciones, posiciones, dependencias y cambios
-de configuración.
-</p>
-
-
-<h2>Arquitectura computacional</h2>
-
-<p>
-La inteligencia artificial se utiliza como herramienta de
-<strong>estructuración, exploración y asistencia analítica</strong>.
-</p>
-
-<p>
-No se asume que una salida computacional constituya evidencia
-científica por sí misma.
-</p>
-
-<pre>
-lenguaje natural
-       ↓
-estructuración
-       ↓
-entidades
-       ↓
-capacidades
-       ↓
-relaciones
-       ↓
-grafo
-       ↓
-representación semántica
-       ↓
-similitudes / patrones potenciales
-       ↓
-hipótesis
-       ↓
-observación
-       ↓
-validación
-</pre>
-
-<p class="note">
-<strong>
-La similitud computacional puede generar hipótesis;
-no demuestra por sí misma una relación causal.
-</strong>
-</p>
-
-<p>
-La validación requiere evidencia adicional y depende del diseño
-metodológico correspondiente a cada problema.
-</p>
-
-
-<h2>Caso piloto · San Carlos de Purén</h2>
-
-<p>
-Se explora un caso piloto territorial orientado a representar actores,
-capacidades, necesidades, proyectos y relaciones en un contexto
-de salud comunitaria y articulación territorial en la Provincia
-de Biobío, Chile.
-</p>
-
-<p>
-El caso se utiliza como <strong>entorno exploratorio para el desarrollo
-metodológico</strong>.
-</p>
-
-<p>
-No se publican datos personales ni información sensible.
-</p>
-
-<pre>
-Junta de Vecinos
-      │
-      ├── conocimiento territorial
-      └── necesidad identificada
-              │
-              ▼
-       Servicio de Salud
-              │
-              ├── conocimiento técnico
-              └── capacidad institucional
-              │
-              ▼
-       proyecto comunitario
-              │
-              ▼
-          aprendizaje
-</pre>
-
-<p>
-El objetivo no es asumir previamente qué relación existe entre
-estos actores, sino desarrollar métodos que permitan representar,
-investigar y posteriormente contrastar dichas relaciones.
-</p>
-
-
-<h2>De la representación a la experimentación</h2>
-
-<p>
-Una representación inicial del sistema puede utilizarse como punto
-de partida para estudiar cambios posteriores:
-</p>
-
-<pre>
-                 G₀
-                 │
-                 ▼
-          intervención I
-                 │
-                 ▼
-             acción
-                 │
-                 ▼
-           interacción
-                 │
-        ┌────────┴────────┐
-        ▼                 ▼
- nuevas relaciones   cambio observado
-        │                 │
-        └────────┬────────┘
-                 ▼
-                 G₁
-</pre>
-
-<p class="q">
-¿Qué cambios observables ocurren en la configuración del sistema
-después de una intervención determinada?
-</p>
-
-
-<h2>Resultados de la investigación doctoral</h2>
-
-<p>
-El marco tiene como antecedente una investigación doctoral sobre
-sostenibilidad urbana en ciudades intermedias chilenas.
-</p>
-
-<p>
-El estudio consideró <strong>80 ciudades</strong> dentro del rango
-definido para la investigación y desarrolló una caracterización
-mediante cuatro arquetipos de
-<strong>Resiliencia–Transformabilidad (R-T)</strong>.
-</p>
-
-<p>
-Los casos estudiados en profundidad fueron:
-</p>
-
-<ul>
-<li>Copiapó</li>
-<li>Talcahuano</li>
-<li>Valdivia</li>
-<li>Angol</li>
-</ul>
-
-<p>
-El período analizado corresponde a <strong>2005–2023</strong>.
-</p>
-
-<p>
-La investigación permitió explorar cómo distintas configuraciones
-territoriales pueden presentar combinaciones diferenciadas de
-resiliencia y transformabilidad.
-</p>
-
-<p>
-La hipótesis interpretativa desarrollada en la investigación sostiene
-que estos atributos pueden comprenderse como propiedades emergentes
-de configuraciones históricas y co-evolutivas entre dimensiones
-tecnológicas, institucionales, sociales y humanas.
-</p>
-
-
-<figure class="img">
-
-<img src="https://cyberzone8.github.io/psychosphere-technosphere/mapa-arquetipos-rt.png"
-  alt="Mapa de Chile mostrando la distribución geoespacial de arquetipos R-T en ciudades chilenas"
-  loading="lazy">
-
-<figcaption>
-Distribución geoespacial de arquetipos R-T en ciudades chilenas.
-La clasificación representa combinaciones relativas de resiliencia
-y transformabilidad definidas por el estudio.
-</figcaption>
-
-</figure>
-
-
-<h2>Una continuación de la investigación</h2>
-
-<p>
-La línea Psicosfera–Tecnósfera representa una evolución metodológica
-de ese trabajo.
-</p>
-
-<p>
-La investigación doctoral permitió estudiar configuraciones territoriales
-a una escala principalmente macro.
-</p>
-
-<p>
-La nueva línea busca explorar con mayor resolución las relaciones
-entre actores, capacidades, instituciones, proyectos y procesos
-humanos, incorporando herramientas de representación computacional
-y análisis de redes.
-</p>
-
-<pre>
-TESIS DOCTORAL
-sostenibilidad urbana
-        ↓
-configuraciones territoriales
-        ↓
-Psicosfera ↔ Tecnósfera
-        ↓
-representación relacional
-        ↓
-ciencia social computacional
-        ↓
-investigación de procesos humanos
-        ↓
-intervenciones territoriales
-</pre>
-
-<p>
-Esta evolución abre un espacio natural para la colaboración con
-Psicología, Ciencias Sociales, Salud Comunitaria y otras disciplinas
-interesadas en comprender los procesos humanos dentro de sistemas
-territoriales complejos.
-</p>
-
-
-<h2>Método y límites actuales</h2>
-
-<p>
-El modelo de datos, los criterios de validación y los diseños de
-evaluación se encuentran en desarrollo.
-</p>
-
-<p>
-Esta página presenta:
-</p>
-
-<ul>
-<li>el problema de investigación;</li>
-<li>el marco conceptual;</li>
-<li>la arquitectura computacional;</li>
-<li>el caso piloto;</li>
-<li>las preguntas abiertas;</li>
-<li>y una línea inicial de investigación interdisciplinaria.</li>
-</ul>
-
-<p>
-Las hipótesis producidas por modelos computacionales deberán ser
-contrastadas mediante métodos apropiados al fenómeno estudiado.
-</p>
-
-
-<h2>Preguntas abiertas</h2>
-
-<ul>
-
-<li>
-¿Qué aspectos del comportamiento pueden estudiarse a partir
-de relaciones declaradas?
-</li>
-
-<li>
-¿Qué fenómenos requieren observación directa?
-</li>
-
-<li>
-¿Cómo distinguir similitud semántica de relación sustantiva?
-</li>
-
-<li>
-¿Qué evidencia permite establecer mecanismos y no solamente asociaciones?
-</li>
-
-<li>
-¿Cómo evaluar intervenciones territoriales cuando no existe
-un grupo de control claramente definido?
-</li>
-
-<li>
-¿Cómo representar relaciones sin exponer información personal
-o sensible?
-</li>
-
-<li>
-¿Qué conceptos psicológicos permiten operacionalizar adecuadamente
-los procesos humanos representados por la Psicosfera?
-</li>
-
-<li>
-¿Qué diseños metodológicos permiten integrar datos cualitativos,
-cuantitativos, relacionales y territoriales?
-</li>
-
-</ul>
-
-
-<h2>Colaboración interdisciplinaria</h2>
-
-<p>
-Esta línea se encuentra en una etapa exploratoria y busca desarrollar
-colaboración entre:
-</p>
-
-<ul>
-
-<li>sostenibilidad;</li>
-<li>Psicología;</li>
-<li>Psicología Social y Comunitaria;</li>
-<li>ciencias sociales computacionales;</li>
-<li>ciencia de redes;</li>
-<li>inteligencia artificial;</li>
-<li>estudios territoriales;</li>
-<li>salud comunitaria;</li>
-<li>modelamiento dinámico;</li>
-<li>evaluación de intervenciones.</li>
-
-</ul>
-
-<p>
-Algunos ámbitos de interés son:
-</p>
-
-<ul>
-
-<li>análisis de redes;</li>
-<li>representación computacional;</li>
-<li>procesos de comportamiento y acción;</li>
-<li>IA y representaciones semánticas;</li>
-<li>diseños de investigación;</li>
-<li>modelamiento dinámico;</li>
-<li>análisis territorial;</li>
-<li>evaluación de intervenciones;</li>
-<li>integración de métodos cualitativos y cuantitativos.</li>
-
-</ul>
-
-<p class="q">
-La pregunta central no pertenece a una sola disciplina.
-Su estudio requiere precisamente la interacción entre distintas
-formas de conocimiento.
-</p>
-
-
-<h2>Comentarios</h2>
-
-<p>
-Los comentarios pueden realizarse mediante la cuenta de GitHub
-asociada al repositorio.
-</p>
-
-</section>
-
-
-<!-- =========================================================
-     ENGLISH VERSION
-========================================================= -->
-
-<section lang="en">
-
-<h2>An Interdisciplinary Research Line</h2>
-
-<p>
-This research line studies the interaction between two analytical
-dimensions of territorial systems.
-</p>
-
-<p>
-The <strong>Psychosphere</strong> refers to human, cognitive,
-relational and social processes involved in perception,
-interpretation and action.
-</p>
-
-<p>
-The <strong>Technosphere</strong> refers to material, technological,
-organizational and institutional structures that may enable,
-condition or constrain particular forms of action.
-</p>
-
-<p>
-The focus is not on studying these dimensions separately,
-but on understanding the configurations that emerge from their
-interaction.
-</p>
-
-<p class="q">
-The purpose is neither to explain human processes through technology
-alone nor to explain territories through behavior alone. It is to
-study the relationships between both domains.
-</p>
-
-
-<h2>Research Problem</h2>
-
-<p>
-Territorial social systems are difficult to understand through
-a single analytical dimension.
-</p>
-
-<p>
-Infrastructure, technology, institutions, resources, knowledge,
-social relations, perceptions and human capabilities interact
-in situated ways and may produce different outcomes even under
-apparently similar conditions.
-</p>
-
-<p>
-The central question is therefore:
-</p>
-
-<p class="q">
-How are relationships between human processes, technological
-structures and institutions configured and transformed in complex
-territorial systems?
-</p>
-
-
-<h2>Research Questions</h2>
-
-<h3>RQ1 · Representation</h3>
-
-<p>
-How can actors, capabilities, relations, projects and technospheric
-conditions involved in territorial social systems be represented
-computationally?
-</p>
-
-<h3>RQ2 · Exploration</h3>
-
-<p>
-Can network analysis, semantic processing and artificial intelligence
-tools help identify potential relations or patterns that can later
-be examined through empirical research?
-</p>
-
-<h3>RQ3 · Change</h3>
-
-<p>
-How do relational configurations and selected dimensions of behavior
-or collective action change following specific interventions?
-</p>
-
-<h3>RQ4 · Validation</h3>
-
-<p>
-What kind of evidence allows us to distinguish association,
-functional relation or correlation from an actual causal mechanism?
-</p>
-
-
-<h2>Interdisciplinary Analytical Framework</h2>
-
-<p>
-The Psychosphere is used as an analytical dimension for representing
-human and social processes relevant to action.
-</p>
-
-<p>
-It is not intended as an independent psychological theory,
-nor as a substitute for concepts developed within the specialized
-disciplines of the human sciences.
-</p>
-
-<p>
-The Technosphere represents material, technical, organizational
-and institutional structures that may enable, condition or constrain
-particular forms of action.
-</p>
-
-
-<div class="scroll">
-
-<table>
-
-<thead>
-<tr>
-<th>Psychosphere</th>
-<th>Technosphere</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>perception</td>
-<td>infrastructure</td>
-</tr>
-
-<tr>
-<td>knowledge</td>
-<td>technology</td>
-</tr>
-
-<tr>
-<td>trust</td>
-<td>institutions</td>
-</tr>
-
-<tr>
-<td>norms</td>
-<td>organizations</td>
-</tr>
-
-<tr>
-<td>learning</td>
-<td>information</td>
-</tr>
-
-<tr>
-<td>motivation</td>
-<td>resources</td>
-</tr>
-
-<tr>
-<td>agency</td>
-<td>systems</td>
-</tr>
-
-<tr>
-<td>behavior</td>
-<td>devices</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-
-<p>
-These categories are analytical and open.
-Their specific meaning depends on the research problem and on the
-discipline used to study it.
-</p>
-
-<p>
-The analytical focus lies in relationships between dimensions,
-rather than assuming that either dimension can explain the system
-on its own.
-</p>
-
-
-<h2>Interdisciplinary Relations</h2>
-
-<p>
-The framework is intended to function as an
-<strong>interdisciplinary interface</strong>.
-</p>
-
-<ul>
-
-<li>
-<strong>Psychology:</strong>
-concepts and methods for studying individual,
-interpersonal, social and community processes.
-</li>
-
-<li>
-<strong>Sociology:</strong>
-structures, relationships and collective processes.
-</li>
-
-<li>
-<strong>Network Science:</strong>
-representation and analysis of relational configurations.
-</li>
-
-<li>
-<strong>Computational Science:</strong>
-information structuring, processing and exploration.
-</li>
-
-<li>
-<strong>Territorial Studies:</strong>
-spatial, institutional and historical contextualization.
-</li>
-
-<li>
-<strong>Sustainability:</strong>
-a field of problems in which these dimensions can be examined together.
-</li>
-
-</ul>
-
-<p class="note">
-<strong>
-The framework does not seek to replace specialized disciplines;
-it seeks to create conditions for them to interact within a common
-representation of the system.
-</strong>
-</p>
-
-
-<h2>Analytical Model</h2>
-
-<pre>
-                         TERRITORY
-                              │
-              ┌───────────────┴───────────────┐
-              │                               │
-        PSYCHOSPHERE                     TECHNOSPHERE
-              │                               │
-              └───────────────┬───────────────┘
-                              │
-                         RELATIONS
-                              │
-                    perception / action
-                              │
-                        interaction
-                              │
-                           outcomes
-                              │
-                          learning
-                              │
-                       transformation
-</pre>
-
-
-<h2>Network Representation</h2>
-
-<p>
-The system can be represented as a heterogeneous network composed
-of different types of entities:
-</p>
-
-<pre>
-PEOPLE
-   │
-   ├── capabilities
-   ├── knowledge
-   ├── relations
-   └── projects
-          │
-          ├── organizations
-          ├── institutions
-          ├── resources
-          └── technologies
-</pre>
-
-<p>
-This representation makes it possible to study not only entities,
-but also relations, positions, dependencies and configuration changes.
-</p>
-
-
-<h2>Computational Architecture</h2>
-
-<p>
-Artificial intelligence is used as a tool for
-<strong>structuring, exploration and analytical assistance</strong>.
-</p>
-
-<p>
-A computational output is not assumed to constitute scientific
-evidence by itself.
-</p>
-
-<pre>
-natural language
-       ↓
-structuring
-       ↓
-entities
-       ↓
-capabilities
-       ↓
-relations
-       ↓
-graph
-       ↓
-semantic representation
-       ↓
-similarities / potential patterns
-       ↓
-hypotheses
-       ↓
-observation
-       ↓
-validation
-</pre>
-
-<p class="note">
-<strong>
-Computational similarity can generate hypotheses;
-it does not demonstrate causal relations by itself.
-</strong>
-</p>
-
-
-<h2>Pilot Case · San Carlos de Purén</h2>
-
-<p>
-A territorial pilot is being explored to represent actors,
-capabilities, needs, projects and relations in a context of
-community health and territorial coordination in Biobío Province,
-Chile.
-</p>
-
-<p>
-The case is used as an <strong>exploratory environment for
-methodological development</strong>.
-</p>
-
-<p>
-No personal or sensitive information is published.
-</p>
-
-<pre>
-Neighborhood Council
-      │
-      ├── territorial knowledge
-      └── identified need
-              │
-              ▼
-        Health Service
-              │
-              ├── technical knowledge
-              └── institutional capacity
-              │
-              ▼
-        community project
-              │
-              ▼
-           learning
-</pre>
-
-
-<h2>From Representation to Experimentation</h2>
-
-<pre>
-                 G₀
-                 │
-                 ▼
-          intervention I
-                 │
-                 ▼
-             action
-                 │
-                 ▼
-           interaction
-                 │
-        ┌────────┴────────┐
-        ▼                 ▼
-    new relations    observed change
-        │                 │
-        └────────┬────────┘
-                 ▼
-                 G₁
-</pre>
-
-<p class="q">
-What observable changes occur in the system configuration after
-a given intervention?
-</p>
-
-
-<h2>Doctoral Research Results</h2>
-
-<p>
-The framework has its antecedent in doctoral research on urban
-sustainability in Chilean intermediate cities.
-</p>
-
-<p>
-The study considered <strong>80 cities</strong> within the defined
-research range and developed a characterization based on four
-<strong>Resilience–Transformability (R-T)</strong> archetypes.
-</p>
-
-<p>
-The in-depth cases were:
-</p>
-
-<ul>
-<li>Copiapó</li>
-<li>Talcahuano</li>
-<li>Valdivia</li>
-<li>Angol</li>
-</ul>
-
-<p>
-The analyzed period was <strong>2005–2023</strong>.
-</p>
-
-<p>
-The research explored how different territorial configurations
-may exhibit differentiated combinations of resilience and
-transformability.
-</p>
-
-<p>
-The interpretive hypothesis developed in the research proposes
-that these attributes can be understood as emergent properties
-of historical and co-evolutionary configurations involving
-technological, institutional, social and human dimensions.
-</p>
-
-
-<figure class="img">
-
-<img src="https://cyberzone8.github.io/psychosphere-technosphere/mapa-arquetipos-rt.png"
-  alt="Mapa de Chile mostrando la distribución geoespacial de arquetipos R-T en ciudades chilenas"
-  loading="lazy">
-
-<figcaption>
-Geospatial distribution of R-T archetypes in Chilean cities.
-The classification represents relative combinations of resilience
-and transformability defined by the study.
-</figcaption>
-
-</figure>
-
-
-<h2>A Continuation of the Research</h2>
-
-<p>
-The Psychosphere–Technosphere line represents a methodological
-development of this previous work.
-</p>
-
-<p>
-The doctoral research examined territorial configurations mainly
-at a macro scale.
-</p>
-
-<p>
-The new line seeks to explore with greater resolution the relationships
-between actors, capabilities, institutions, projects and human
-processes, incorporating computational representation and network
-analysis.
-</p>
-
-<pre>
-DOCTORAL RESEARCH
-urban sustainability
-        ↓
-territorial configurations
-        ↓
-Psychosphere ↔ Technosphere
-        ↓
-relational representation
-        ↓
-computational social science
-        ↓
-research on human processes
-        ↓
-territorial interventions
-</pre>
-
-<p>
-This development creates a natural space for collaboration with
-Psychology, Social Sciences, Community Health and other disciplines
-interested in understanding human processes within complex
-territorial systems.
-</p>
-
-
-<h2>Method and Current Limits</h2>
-
-<p>
-The data model, validation criteria and evaluation designs are
-currently under development.
-</p>
-
-<p>
-This page presents:
-</p>
-
-<ul>
-<li>the research problem;</li>
-<li>the analytical framework;</li>
-<li>the computational architecture;</li>
-<li>the pilot case;</li>
-<li>open questions;</li>
-<li>and an initial interdisciplinary research line.</li>
-</ul>
-
-<p>
-Hypotheses generated through computational models will require
-appropriate empirical methods for validation according to the
-phenomenon under study.
-</p>
-
-
-<h2>Open Questions</h2>
-
-<ul>
-
-<li>
-Which aspects of behavior can be studied from declared relations?
-</li>
-
-<li>
-Which phenomena require direct observation?
-</li>
-
-<li>
-How can semantic similarity be distinguished from substantive relation?
-</li>
-
-<li>
-What evidence allows mechanisms to be established rather than
-mere associations?
-</li>
-
-<li>
-How can territorial interventions be evaluated when no clear
-control group exists?
-</li>
-
-<li>
-How can relationships be represented without exposing personal
-or sensitive information?
-</li>
-
-<li>
-Which psychological concepts can appropriately operationalize
-the human processes represented by the Psychosphere?
-</li>
-
-<li>
-Which research designs can integrate qualitative, quantitative,
-relational and territorial data?
-</li>
-
-</ul>
-
-
-<h2>Interdisciplinary Collaboration</h2>
-
-<p>
-This line of work is exploratory and seeks collaboration across:
-</p>
-
-<ul>
-
-<li>sustainability;</li>
-<li>Psychology;</li>
-<li>Social and Community Psychology;</li>
-<li>computational social science;</li>
-<li>network science;</li>
-<li>artificial intelligence;</li>
-<li>territorial studies;</li>
-<li>community health;</li>
-<li>dynamic modeling;</li>
-<li>intervention evaluation.</li>
-
-</ul>
-
-<p>
-Areas of interest include:
-</p>
-
-<ul>
-
-<li>network analysis;</li>
-<li>computational representation;</li>
-<li>behavioral and action processes;</li>
-<li>AI and semantic representations;</li>
-<li>research designs;</li>
-<li>dynamic modeling;</li>
-<li>territorial analysis;</li>
-<li>intervention evaluation;</li>
-<li>integration of qualitative and quantitative methods.</li>
-
-</ul>
-
-<p class="q">
-The central question does not belong to a single discipline.
-Its investigation requires interaction between different forms
-of knowledge.
-</p>
-
-
-<h2>Comments</h2>
-
-<p>
-Comments can be posted through the GitHub account associated
-with the repository.
-</p>
-
-</section>
-
-
-<!-- =========================================================
-     COMMENTS
-========================================================= -->
-
-<div id="comments"></div>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer lang="es">
-
-  Contacto: Gustavo Godoy ·
-  <a
-    href="mailto:gustavogodoy.phd@gmail.com"
-    aria-label="Correo electrónico de Gustavo Godoy">
-    gustavogodoy.phd@gmail.com
-  </a>
-  ·
-  <a
-    href="https://www.linkedin.com/in/gustavo-godoy-phd-confidential-strategic-advisor-9b505029/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn de Gustavo Godoy"
-    title="LinkedIn">
-    LinkedIn
-  </a>
-
-</footer>
-
-<footer lang="en">
-
-  Contact: Gustavo Godoy ·
-  <a
-    href="mailto:gustavogodoy.phd@gmail.com"
-    aria-label="Gustavo Godoy email">
-    gustavogodoy.phd@gmail.com
-  </a>
-  ·
-  <a
-    href="https://www.linkedin.com/in/gustavo-godoy-phd-confidential-strategic-advisor-9b505029/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Gustavo Godoy LinkedIn"
-    title="LinkedIn">
-    LinkedIn
-  </a>
-
-</footer>
-
-
-</main>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-/*
-=========================================================
-GISCUS CONFIGURATION
-=========================================================
-
-Replace:
-
-TU_USUARIO/psicosfera-tecnosfera
-
-with your real GitHub repository.
-
-Then obtain:
-
-repoId
-categoryId
-
-from:
-
-https://giscus.app/
-
-=========================================================
-*/
-
-var GISCUS = {
-  repo:"TU_USUARIO/psicosfera-tecnosfera",
-  repoId:"",
-  category:"Comments",
-  categoryId:"",
-  mapping:"pathname"
-};
-
-
-/* =======================================================
-   LANGUAGE
-======================================================= */
-
-function setLang(l){
-
-  document.documentElement.setAttribute("data-lang",l);
-
-  document.documentElement.lang=l;
-
-  try{
-    localStorage.setItem("lang",l);
-  }catch(e){}
-
-  var frame=document.querySelector("iframe.giscus-frame");
-
-  if(frame){
-
-    frame.contentWindow.postMessage(
-      {
-        giscus:{
-          setConfig:{
-            lang:l
+      <h2>
+        De los componentes a las configuraciones
+      </h2>
+
+      <p>
+        El análisis parte de una ontología estratificada donde los fenómenos
+        observables constituyen expresiones de configuraciones y relaciones
+        que pueden operar en diferentes niveles.
+      </p>
+
+      <p>
+        La unidad de análisis puede integrar:
+      </p>
+
+      <ul>
+
+        <li>Persona</li>
+        <li>Relación</li>
+        <li>Organización</li>
+        <li>Institución</li>
+        <li>Tecnología</li>
+        <li>Territorio</li>
+
+      </ul>
+
+      <p>
+        La finalidad no es reducir el territorio a variables psicológicas,
+        sociales o tecnológicas aisladas, sino explorar cómo estas dimensiones
+        se articulan y pueden producir determinadas trayectorias.
+      </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         MODEL
+    ================================================== -->
+
+    <section id="model" lang="es">
+
+      <div class="section-label">
+        MODELO
+      </div>
+
+      <h2>
+        Dinámica de transformación
+      </h2>
+
+      <p>
+        El ciclo analítico permite seguir una secuencia entre perturbaciones,
+        experiencia, interpretación, interacción, decisión y aprendizaje.
+      </p>
+
+      <div class="model">
+
+        <div class="model-line">
+
+          Perturbación
+          →
+          Observación
+          →
+          Experiencia
+          →
+          Interpretación
+          →
+          Interacción
+          →
+          Contraste
+          →
+          Decisión
+          →
+          Acción
+          →
+          Aprendizaje
+          →
+          Transformación
+
+        </div>
+
+      </div>
+
+      <p>
+        Este ciclo no presupone una secuencia determinista. Puede contener
+        retroalimentaciones, interrupciones, bifurcaciones y mecanismos
+        emergentes.
+      </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         NETWORK REPRESENTATION
+    ================================================== -->
+
+    <section id="network" lang="es">
+
+      <div class="section-label">
+        NETWORK REPRESENTATION
+      </div>
+
+      <h2>
+        Representación relacional
+      </h2>
+
+      <p>
+        Los sistemas territoriales pueden representarse como redes donde
+        entidades, capacidades, instituciones, tecnologías y procesos
+        mantienen diferentes tipos de relaciones.
+      </p>
+
+      <div class="model">
+
+        <div class="model-line">
+
+          Entidades
+          →
+          Capacidades
+          →
+          Relaciones
+          →
+          Configuraciones
+          →
+          Patrones
+          →
+          Hipótesis
+
+        </div>
+
+      </div>
+
+      <p>
+        Esta representación permite explorar estructuras que pueden ser
+        difíciles de observar mediante descripciones lineales.
+      </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         COMPUTATIONAL ARCHITECTURE
+    ================================================== -->
+
+    <section id="architecture" lang="es">
+
+      <div class="section-label">
+        COMPUTATIONAL ARCHITECTURE
+      </div>
+
+      <h2>
+        De lenguaje natural a hipótesis
+      </h2>
+
+      <p>
+        La arquitectura computacional busca transformar información
+        cualitativa y textual en estructuras que puedan ser exploradas
+        mediante análisis semántico y de redes.
+      </p>
+
+      <div class="architecture">
+
+        <div class="architecture-flow">
+
+          <span class="node">Lenguaje natural</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Estructuración</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Entidades</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Capacidades</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Relaciones</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Grafo</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Representación semántica</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Similitudes / patrones potenciales</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Hipótesis</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Observación</span>
+          <span class="arrow">→</span>
+
+          <span class="node">Validación</span>
+
+        </div>
+
+      </div>
+
+      <div class="validation-note">
+
+        <strong>Principio epistemológico:</strong>
+
+        <p>
+          La similitud computacional puede generar hipótesis;
+          no demuestra por sí misma una relación causal.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         PILOT CASE
+    ================================================== -->
+
+    <section id="pilot" lang="es">
+
+      <div class="section-label">
+        PILOT CASE
+      </div>
+
+      <h2>
+        San Carlos de Purén
+      </h2>
+
+      <div class="case-box">
+
+        <div class="case-meta">
+          Exploratory methodological environment · Biobío, Chile
+        </div>
+
+        <h3>
+          Del diagnóstico territorial a la experimentación computacional
+        </h3>
+
+        <p>
+          San Carlos de Purén constituye un entorno exploratorio para
+          examinar cómo información territorial, conocimiento comunitario,
+          instituciones, capacidades y tecnologías pueden ser articulados
+          mediante una representación sistémica.
+        </p>
+
+        <p>
+          El objetivo no es producir una descripción exhaustiva de la
+          comunidad, sino desarrollar procedimientos que permitan conectar
+          observación territorial, conocimiento local, investigación,
+          capacidades institucionales y experimentación metodológica.
+        </p>
+
+        <p class="small">
+          No se publican aquí datos personales ni información sensible
+          de participantes o habitantes.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         THESIS RESULTS
+    ================================================== -->
+
+    <section id="results" lang="es">
+
+      <div class="section-label">
+        THESIS RESULTS
+      </div>
+
+      <h2>
+        Resultados de investigación
+      </h2>
+
+      <p class="lead">
+        El marco fue aplicado en una investigación sobre mecanismos de
+        sostenibilidad urbana en ciudades intermedias chilenas.
+      </p>
+
+      <p>
+        El análisis consideró 80 ciudades y permitió identificar cuatro
+        arquetipos de Resiliencia–Transformabilidad (R–T), explorando
+        configuraciones históricas y territoriales diferenciadas durante
+        el período 2005–2023.
+      </p>
+
+      <div class="result-grid">
+
+        <div class="result-card">
+          <strong>80 ciudades</strong>
+          <span>
+            Base territorial utilizada para el análisis comparativo.
+          </span>
+        </div>
+
+        <div class="result-card">
+          <strong>4 arquetipos R–T</strong>
+          <span>
+            Configuraciones diferenciadas de resiliencia y transformabilidad.
+          </span>
+        </div>
+
+        <div class="result-card">
+          <strong>2005–2023</strong>
+          <span>
+            Horizonte temporal considerado en el análisis.
+          </span>
+        </div>
+
+        <div class="result-card">
+          <strong>Casos</strong>
+          <span>
+            Copiapó · Talcahuano · Valdivia · Angol
+          </span>
+        </div>
+
+      </div>
+
+
+      <!-- IMPORTANT:
+           Direct GitHub Pages URL to the image.
+           Do NOT change this to images/mapa-arquetipos-rt.png
+           unless the file is moved into an /images/ folder.
+      -->
+
+      <figure class="img">
+
+        <img
+          src="https://cyberzone8.github.io/psychosphere-technosphere/mapa-arquetipos-rt.png"
+          alt="Mapa de Chile mostrando la distribución geoespacial de arquetipos de Resiliencia–Transformabilidad en ciudades chilenas"
+          loading="lazy">
+
+        <figcaption>
+          Distribución geoespacial de arquetipos de
+          Resiliencia–Transformabilidad en ciudades chilenas.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        Los resultados se interpretan como una aproximación a propiedades
+        emergentes asociadas a configuraciones históricas y
+        coevolutivas, y no como una clasificación determinista de las
+        ciudades.
+      </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         METHOD
+    ================================================== -->
+
+    <section id="method" lang="es">
+
+      <div class="section-label">
+        METHOD
+      </div>
+
+      <h2>
+        Método y validación
+      </h2>
+
+      <p>
+        El enfoque combina análisis territorial, pensamiento sistémico,
+        realismo crítico, representación relacional y herramientas
+        computacionales.
+      </p>
+
+      <p>
+        La función de las herramientas computacionales es apoyar la
+        organización, exploración y generación de hipótesis, manteniendo
+        la validación empírica como una etapa independiente.
+      </p>
+
+      <h3>
+        Distinción epistemológica
+      </h3>
+
+      <ul>
+
+        <li>
+          Una similitud semántica no implica causalidad.
+        </li>
+
+        <li>
+          Una asociación estadística no demuestra por sí sola un mecanismo.
+        </li>
+
+        <li>
+          Una relación funcional requiere especificación conceptual y
+          evidencia adecuada.
+        </li>
+
+        <li>
+          Un mecanismo causal requiere contrastación empírica y explicación
+          contextual.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- ==================================================
+         OPEN QUESTIONS
+    ================================================== -->
+
+    <section id="open-questions" lang="es">
+
+      <div class="section-label">
+        OPEN QUESTIONS
+      </div>
+
+      <h2>
+        Preguntas abiertas
+      </h2>
+
+      <p>
+        La investigación permanece abierta a problemas que requieren
+        integración metodológica entre ciencias sociales, ciencias del
+        comportamiento, estudios territoriales, ciencia de datos y
+        modelamiento de sistemas.
+      </p>
+
+      <ul>
+
+        <li>
+          ¿Cómo identificar mecanismos generativos en configuraciones
+          socio-territoriales complejas?
+        </li>
+
+        <li>
+          ¿Cómo incorporar procesos psicológicos sin reducir el territorio
+          a explicaciones individualistas?
+        </li>
+
+        <li>
+          ¿Cómo integrar conocimiento comunitario y representación
+          computacional?
+        </li>
+
+        <li>
+          ¿Cómo evaluar empíricamente hipótesis generadas mediante
+          inteligencia artificial y análisis de redes?
+        </li>
+
+        <li>
+          ¿Cómo distinguir patrones históricos de relaciones causales?
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- ==================================================
+         OPEN COLLABORATION
+    ================================================== -->
+
+    <section id="collaboration" lang="es">
+
+      <div class="section-label">
+        OPEN COLLABORATION
+      </div>
+
+      <h2>
+        Investigación interdisciplinaria
+      </h2>
+
+      <p class="lead">
+        Esta línea está abierta a colaboración con investigadores y
+        profesionales provenientes de diferentes disciplinas.
+      </p>
+
+      <p>
+        El propósito no es construir una disciplina que sustituya a otras,
+        sino desarrollar interfaces capaces de conectar preguntas,
+        métodos y evidencias.
+      </p>
+
+      <div class="discipline-list">
+
+        <div class="discipline">
+          Psicología
+        </div>
+
+        <div class="discipline">
+          Psicología Social y Comunitaria
+        </div>
+
+        <div class="discipline">
+          Ciencias Sociales Computacionales
+        </div>
+
+        <div class="discipline">
+          Network Science
+        </div>
+
+        <div class="discipline">
+          Inteligencia Artificial
+        </div>
+
+        <div class="discipline">
+          Estudios Territoriales
+        </div>
+
+        <div class="discipline">
+          Salud Comunitaria
+        </div>
+
+        <div class="discipline">
+          Modelamiento Dinámico
+        </div>
+
+        <div class="discipline">
+          Evaluación de Intervenciones
+        </div>
+
+        <div class="discipline">
+          Sostenibilidad y Resiliencia
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         HOW TO CITE
+    ================================================== -->
+
+    <section id="cite" lang="es">
+
+      <div class="section-label">
+        CITACIÓN
+      </div>
+
+      <h2>
+        Cómo citar
+      </h2>
+
+      <p>
+        Si utilizas conceptos, modelos, resultados, figuras o contenidos
+        desarrollados en esta investigación, puedes citar esta página
+        de acuerdo con las normas APA 7.ª edición.
+      </p>
+
+
+      <h3>
+        Referencia bibliográfica
+      </h3>
+
+      <div class="citation-box">
+
+        <p id="apaCitation">
+          Godoy Uribe, G. M. (2026).
+          Psicosfera–Tecnósfera: Interdisciplinary research &amp;
+          territorial intelligence.
+          GitHub Pages.
+          https://cyberzone8.github.io/psychosphere-technosphere/
+        </p>
+
+        <button
+          type="button"
+          id="copyApaButton"
+          class="copy-citation-button"
+          aria-label="Copiar cita APA al portapapeles">
+
+          Copiar cita APA
+
+        </button>
+
+        <span
+          id="copyApaStatus"
+          class="copy-status"
+          role="status"
+          aria-live="polite">
+        </span>
+
+      </div>
+
+
+      <h3>
+        Cita en el texto
+      </h3>
+
+      <p>
+        <strong>Cita parentética:</strong>
+        (Godoy Uribe, 2026)
+      </p>
+
+      <p>
+        <strong>Cita narrativa:</strong>
+        Godoy Uribe (2026)
+      </p>
+
+
+      <h3>
+        Para citar el mapa de arquetipos R–T
+      </h3>
+
+      <p>
+        Si utilizas específicamente el mapa de arquetipos de
+        Resiliencia–Transformabilidad, puedes citarlo como una figura
+        desarrollada en esta investigación:
+      </p>
+
+      <div class="citation-box">
+
+        <p>
+          Godoy Uribe, G. M. (2026).
+          <em>
+            Mapa de arquetipos de Resiliencia–Transformabilidad
+          </em>
+          [Mapa].
+          <em>Psicosfera–Tecnósfera</em>.
+          https://cyberzone8.github.io/psychosphere-technosphere/mapa-arquetipos-rt.png
+        </p>
+
+      </div>
+
+
+      <h3>
+        Uso académico
+      </h3>
+
+      <p>
+        La página constituye una línea de investigación en desarrollo.
+        Los contenidos, modelos, resultados y representaciones pueden
+        actualizarse a medida que avance la investigación.
+        Para usos académicos se recomienda mantener la referencia al
+        recurso original y consultar la versión disponible.
+      </p>
+
+      <p class="citation-note">
+
+        <strong>APA 7.ª edición:</strong>
+        la referencia identifica al autor, año, título del recurso y
+        ubicación digital para facilitar su trazabilidad académica.
+
+      </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         COMMENTS / GISCUS
+    ================================================== -->
+
+    <section id="comments" lang="es">
+
+      <div class="section-label">
+        DISCUSSION
+      </div>
+
+      <h2>
+        Comments
+      </h2>
+
+      <p class="muted">
+        Discussion and academic feedback can be incorporated here
+        through Giscus.
+      </p>
+
+      <div id="giscus-container"></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer>
+
+    <main>
+
+      <p>
+
+        Contacto:
+        Gustavo Godoy ·
+
+        <a
+          href="mailto:gustavogodoy.phd@gmail.com">
+          gustavogodoy.phd@gmail.com
+        </a>
+
+        ·
+
+        <a
+          href="https://www.linkedin.com/in/gustavo-godoy-phd-confidential-strategic-advisor-9b505029/"
+          target="_blank"
+          rel="noopener noreferrer">
+          LinkedIn
+        </a>
+
+      </p>
+
+      <p>
+        Psicosfera–Tecnósfera · Interdisciplinary Research &
+        Territorial Intelligence
+      </p>
+
+    </main>
+
+  </footer>
+
+
+  <!-- ==================================================
+       JAVASCRIPT
+  ================================================== -->
+
+  <script>
+
+    /*
+     * -----------------------------------------------
+     * COPY APA CITATION
+     * -----------------------------------------------
+     */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const copyButton =
+        document.getElementById("copyApaButton");
+
+      const citation =
+        document.getElementById("apaCitation");
+
+      const status =
+        document.getElementById("copyApaStatus");
+
+
+      if (!copyButton || !citation) {
+        return;
+      }
+
+
+      copyButton.addEventListener("click", async function () {
+
+        const apaText =
+          citation.innerText.trim();
+
+
+        try {
+
+          await navigator.clipboard.writeText(
+            apaText
+          );
+
+
+          copyButton.textContent =
+            "✓ Cita copiada";
+
+          if (status) {
+
+            status.textContent =
+              "La referencia APA fue copiada al portapapeles.";
+
           }
+
+
+          setTimeout(function () {
+
+            copyButton.textContent =
+              "Copiar cita APA";
+
+            if (status) {
+
+              status.textContent = "";
+
+            }
+
+          }, 2500);
+
+
+        } catch (error) {
+
+          console.error(
+            "Error al copiar la cita APA:",
+            error
+          );
+
+
+          if (status) {
+
+            status.textContent =
+              "No fue posible copiar automáticamente. Puedes seleccionar y copiar la referencia manualmente.";
+
+          }
+
         }
-      },
-      "https://giscus.app"
-    );
 
-  }
+      });
 
-}
+    });
 
 
-/* =======================================================
-   GISCUS
-======================================================= */
+    /*
+     * -----------------------------------------------
+     * GISCUS
+     *
+     * Replace the values below with the repository
+     * and category identifiers generated by Giscus.
+     * -----------------------------------------------
+     */
 
-function loadComments(){
+    const GISCUS = {
 
-  var box=document.getElementById("comments");
+      repo: "TU_USUARIO/psicosfera-tecnosfera",
 
-  if(!GISCUS.repoId || !GISCUS.categoryId){
+      repoId: "",
 
-    box.innerHTML =
+      category: "Comments",
 
-      '<div class="setup">' +
+      categoryId: "",
 
-      '<span lang="es">' +
-      'Comentarios aún no configurados. ' +
-      'Completa la configuración de <code>GISCUS</code> ' +
-      'al final de este archivo.' +
-      '</span>' +
+      mapping: "pathname"
 
-      '<span lang="en">' +
-      'Comments are not configured yet. ' +
-      'Complete the <code>GISCUS</code> configuration ' +
-      'at the bottom of this file.' +
-      '</span>' +
-
-      '</div>';
-
-    return;
-  }
+    };
 
 
-  var s=document.createElement("script");
+    /*
+     * Giscus is intentionally not loaded until the
+     * repository/category identifiers are configured.
+     */
 
-  s.src="https://giscus.app/client.js";
+    if (
+      GISCUS.repo &&
+      GISCUS.repo !== "TU_USUARIO/psicosfera-tecnosfera" &&
+      GISCUS.repoId &&
+      GISCUS.categoryId
+    ) {
 
-  s.async=true;
+      const script =
+        document.createElement("script");
 
-  s.crossOrigin="anonymous";
+      script.src =
+        "https://giscus.app/client.js";
 
+      script.setAttribute(
+        "data-repo",
+        GISCUS.repo
+      );
 
-  var attributes={
+      script.setAttribute(
+        "data-repo-id",
+        GISCUS.repoId
+      );
 
-    "data-repo":GISCUS.repo,
+      script.setAttribute(
+        "data-category",
+        GISCUS.category
+      );
 
-    "data-repo-id":GISCUS.repoId,
+      script.setAttribute(
+        "data-category-id",
+        GISCUS.categoryId
+      );
 
-    "data-category":GISCUS.category,
+      script.setAttribute(
+        "data-mapping",
+        GISCUS.mapping
+      );
 
-    "data-category-id":GISCUS.categoryId,
+      script.setAttribute(
+        "data-strict",
+        "0"
+      );
 
-    "data-mapping":GISCUS.mapping,
+      script.setAttribute(
+        "data-reactions-enabled",
+        "1"
+      );
 
-    "data-reactions-enabled":"1",
+      script.setAttribute(
+        "data-emit-metadata",
+        "0"
+      );
 
-    "data-input-position":"top",
+      script.setAttribute(
+        "data-input-position",
+        "bottom"
+      );
 
-    "data-theme":"preferred_color_scheme",
+      script.setAttribute(
+        "data-theme",
+        "light"
+      );
 
-    "data-lang":document.documentElement.lang
+      script.setAttribute(
+        "data-lang",
+        "es"
+      );
 
-  };
+      script.setAttribute(
+        "crossorigin",
+        "anonymous"
+      );
 
+      script.async = true;
 
-  for(var k in attributes){
+      document
+        .getElementById("giscus-container")
+        .appendChild(script);
 
-    s.setAttribute(k,attributes[k]);
+    }
 
-  }
-
-
-  box.appendChild(s);
-
-}
-
-
-/* =======================================================
-   INITIALIZATION
-======================================================= */
-
-(function(){
-
-  var l;
-
-  try{
-    l=localStorage.getItem("lang");
-  }catch(e){}
-
-  if(!l){
-
-    l =
-      (navigator.language || "es").slice(0,2) === "en"
-      ? "en"
-      : "es";
-
-  }
-
-  setLang(l);
-
-  loadComments();
-
-})();
-
-</script>
+  </script>
 
 </body>
 </html>
