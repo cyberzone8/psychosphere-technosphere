@@ -40,6 +40,30 @@ a{color:var(--tec)}
 #comments .setup{font:.9rem "Public Sans",sans-serif;color:var(--mute);border:1px dashed var(--line);padding:1rem;border-radius:6px}
 footer{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--line);font:.85rem "Public Sans",sans-serif;color:var(--mute)}
 :focus-visible{outline:2px solid var(--tec);outline-offset:2px}
+.linkedin{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  border-radius:4px;
+  background:var(--tec);
+  color:white;
+  font:700 14px/1 "Public Sans",sans-serif;
+  text-decoration:none;
+  vertical-align:middle;
+  transition:opacity .2s ease,transform .2s ease;
+}
+
+.linkedin:hover{
+  opacity:.8;
+  transform:translateY(-1px);
+}
+
+.linkedin:focus-visible{
+  outline:2px solid var(--tec);
+  outline-offset:3px;
+}
 </style>
 </head>
 <body>
@@ -212,8 +236,31 @@ G₀ → I → G₁</pre>
 
 <div id="comments"></div>
 
-<footer lang="es">Contacto: [tu nombre] · [correo] · [LinkedIn]</footer>
-<footer lang="en">Contact: [your name] · [email] · [LinkedIn]</footer>
+<footer lang="es">
+  Contacto: Gustavo Godoy ·
+  <a href="mailto:gustavogodoy.phd@gmail.com">gustavogodoy.phd@gmail.com</a> ·
+  <a href="https://www.linkedin.com/in/gustavo-godoy-phd-confidential-strategic-advisor-9b505029/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="LinkedIn de Gustavo Godoy"
+     class="linkedin"
+     title="LinkedIn">
+    in
+  </a>
+</footer>
+
+<footer lang="en">
+  Contact: Gustavo Godoy ·
+  <a href="mailto:gustavogodoy.phd@gmail.com">gustavogodoy.phd@gmail.com</a> ·
+  <a href="https://www.linkedin.com/in/gustavo-godoy-phd-confidential-strategic-advisor-9b505029/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Gustavo Godoy on LinkedIn"
+     class="linkedin"
+     title="LinkedIn">
+    in
+  </a>
+</footer>
 </main>
 
 <script>
